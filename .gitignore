@@ -1,0 +1,6 @@
+# General files
+Thumbs.db
+*.DS_Store
+
+# Lockal backup
+dotfiles_backup
