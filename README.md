@@ -1,4 +1,4 @@
-Dotfiles
+# Dotfiles
 
 ========
 
@@ -6,7 +6,7 @@ Repository to keep my custom dotfiles
 
 -----
 
-Project structure
+## Project structure
 
 * [root]
   * Scripts and configuration
