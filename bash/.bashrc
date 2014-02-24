@@ -1,11 +1,7 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+		*i*) ;;
+			*) return;;
 esac
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -32,20 +28,28 @@ shopt -s checkwinsize
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+		debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 #Custom programmes paths
 PATH=$PATH:"~/programmes/programming/eclipse/"
 
 function include_d {
-    dir=$1
-    if [ -d $HOME/.$dir.d -a -r $HOME/.$dir.d -a -x $HOME/.$dir.d ]; then
-        for i in $HOME/.$dir.d/*.sh; do
-             . $i
-        done
-    fi
+		dir=$1
+		if [ -d $HOME/.$dir.d -a -r $HOME/.$dir.d -a -x $HOME/.$dir.d ]; then
+				for i in $HOME/.$dir.d/*.sh; do
+						 . $i
+				done
+		fi
 }
+
+if [ -d $HOME/.rvm/bin ]; then
+	PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+fi
+
+if [ -d $HOME/pear/bin ]; then
+	PATH=$PATH:$HOME/pear/bin # Add pear to PATH
+fi
 
 # Bash custom prompt
 include_d bash_prompt

@@ -1,6 +1,6 @@
 if [ -x /usr/bin/drush ]; then
 	# Aliases for common drush commands that work in a global context.
-	alias dr='drush'
+	alias d='drush'
 	alias ddd='drush drupal-directory'
 	alias dl='drush pm-download'
 	alias ev='drush php-eval'
