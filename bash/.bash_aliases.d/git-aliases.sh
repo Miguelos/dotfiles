@@ -15,7 +15,15 @@ if [ -x /usr/bin/git ]; then
 	alias gau='git add -uv'
 	alias gr='git ls-files --deleted -z | xargs -0 git rm'
 	alias gd='git diff --color=always'
-	alias gco='git commit -vm'
+
+	function gco {
+		if [ -z "$1" ]; then
+			git commit --verbose -a
+		else
+			git commit --verbose -am $1
+		fi
+	}
+
 	alias gca='git commit -avm' # commits everything (except brand new files and removed files), even unstaged changes
 	alias gaco='git commit --amend -am' # Stage modified and deleted files adding them to the last commit with a new message 
 	alias gcl='git clean -ndx' # Trash the ignored files and directories (option -d) from git
