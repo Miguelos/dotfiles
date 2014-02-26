@@ -10,13 +10,14 @@ fi
 case "$1" in
 
 'push')
-  echo "pushing"
-  rsync -av --exclude='[^.]*' --exclude='.Trash' --no-perms ~ bash/
+  echo "## Pushing..."
+  rsync -zvr --include='.bash*' --exclude='*' --include='*/' --no-perms ~ bash/
+  #git commit -am ':shell: dotfiles updated' && git push
   ;;
 'pull')
-  echo "pull"
+  echo "## Pulling..."
   #git pull
-  rsync -av --no-perms bash/ ~
+  rsync -zvr --no-perms bash/ ~
   ;;
 esac
 
