@@ -11,7 +11,7 @@ case "$1" in
 
 'push')
   echo "## Pushing..."
-  rsync -nrv --include="bash*" --exclude="*" --no-perms ~ bash/
+  rsync -arv --include="/.bash*/" --include=".bash*" --exclude="*" --no-perms ~/ bash
   #git commit -am ':shell: dotfiles updated' && git push
   ;;
 'pull')
