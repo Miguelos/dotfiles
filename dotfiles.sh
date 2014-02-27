@@ -3,15 +3,15 @@
 #Check if argument is passed
 if [ $# -lt 1 ]
 then
-        echo "Usage ./dotfiles.sh [pull|push]"
-        exit
+  echo "Usage ./dotfiles.sh [pull|push]"
+  exit
 fi
 
 case "$1" in
 
 'push')
   echo "## Pushing..."
-  rsync -zvr --include='.bash*' --exclude='*' --include='*/' --no-perms ~ bash/
+  rsync -nrv --include="bash*" --exclude="*" --no-perms ~ bash/
   #git commit -am ':shell: dotfiles updated' && git push
   ;;
 'pull')
