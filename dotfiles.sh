@@ -11,13 +11,16 @@ case "$1" in
 
 'push')
   echo "## Pushing..."
+  #TODO backup
   rsync -arv --include="/.bash*/" --include=".bash*" --exclude="*" --no-perms ~/ bash
+  rsync -arv --include="/.vim*/" --include=".vim*" --exclude="*" --no-perms ~/ vim
   #git commit -am ':shell: dotfiles updated' && git push
   ;;
 'pull')
   echo "## Pulling..."
-  #git pull
   rsync -zvr --no-perms bash/ ~
+  rsync -zvr --no-perms vim/ ~
+  #git pull
   ;;
 esac
 
