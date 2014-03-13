@@ -13,7 +13,7 @@ case "$1" in
   echo "## Pushing..."
   #TODO backup
   rsync -arv --include="/.bash*/" --include=".bash*" --exclude="*" --no-perms ~/ bash
-  rsync -arv --include="/.vim*/" --include=".vim*" --exclude="*" --no-perms ~/ vim
+  rsync -arv --include="/.vim/" --include=".vimrc" --exclude="*" --no-perms ~/ vim
   #git commit -am ':shell: dotfiles updated' && git push
   ;;
 'pull')
