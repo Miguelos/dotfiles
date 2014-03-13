@@ -10,9 +10,9 @@ fi
 case "$1" in
 
 'push')
-  echo "## Pushing..."
+  "## Pushing..."
   #TODO backup
-  rsync -arv --include="/.bash*/" --include=".bash*" --exclude="*" --no-perms ~/ bash
+  rsync -arv --include="/.bash*/" --exclude=".bash_history" --include=".bash*" --exclude="*" --no-perms ~/ bash
   rsync -arv --include="/.vim/" --include=".vimrc" --exclude="*" --no-perms ~/ vim
   #git commit -am ':shell: dotfiles updated' && git push
   ;;
