@@ -43,10 +43,6 @@ function include_d {
 		fi
 }
 
-if [ -d $HOME/.rvm/bin ]; then
-	PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-fi
-
 if [ -d $HOME/pear/bin ]; then
 	PATH=$PATH:$HOME/pear/bin # Add pear to PATH
 fi
@@ -59,3 +55,5 @@ include_d bash_completion
 
 # Alias definitions.
 include_d bash_aliases
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
